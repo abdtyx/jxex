@@ -8,6 +8,10 @@ data:
       require_self_approval: true
     - lgtm_acts_as_approve: true
       repos:
+      - abdtyx/jx-golang-http
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
       - abdtyx/jx-quickstart
       require_self_approval: true
     cat: {}
@@ -20,6 +24,11 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
+      abdtyx/jx-golang-http:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       abdtyx/jx-quickstart:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
@@ -34,6 +43,20 @@ data:
       additional_labels: null
     owners: {}
     plugins:
+      abdtyx/jx-golang-http:
+      - approve
+      - assign
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - cat
+      - dog
+      - pony
       abdtyx/jx-quickstart:
       - approve
       - assign
@@ -74,6 +97,9 @@ data:
     triggers:
     - repos:
       - abdtyx/jxex
+      trusted_org: abdtyx
+    - repos:
+      - abdtyx/jx-golang-http
       trusted_org: abdtyx
     - repos:
       - abdtyx/jx-quickstart

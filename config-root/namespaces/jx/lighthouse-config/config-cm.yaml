@@ -7,6 +7,7 @@ data:
       LinkURL: null
     in_repo_config:
       enabled:
+        abdtyx/jx-golang-http: true
         abdtyx/jx-quickstart: true
         abdtyx/jxex: true
     plank: {}
@@ -20,6 +21,7 @@ data:
         required-if-present-contexts: null
         skip-unknown-contexts: false
       merge_method:
+        abdtyx/jx-golang-http: merge
         abdtyx/jx-quickstart: merge
         abdtyx/jxex: merge
       queries:
@@ -33,6 +35,7 @@ data:
         - needs-rebase
         repos:
         - abdtyx/jxex
+        - abdtyx/jx-golang-http
         - abdtyx/jx-quickstart
       - labels:
         - updatebot
@@ -44,6 +47,7 @@ data:
         - needs-rebase
         repos:
         - abdtyx/jxex
+        - abdtyx/jx-golang-http
         - abdtyx/jx-quickstart
       target_url: http://lighthouse-jx.192.168.59.100.nip.io/merge/status
 kind: ConfigMap
